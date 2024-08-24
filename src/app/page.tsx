@@ -12,12 +12,12 @@ const Inicio = dynamic(() => import("./components/Inicio/Inicio"));
 const Proyectos = dynamic(() => import("./components/Proyectos/Proyectos"));
 
 export default function Home() {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
-    // Simula una carga
-    setTimeout(() => setLoading(false), 4000);
-  }, []);
+  // useEffect(() => {
+  //   // Simula una carga
+  //   setTimeout(() => setLoading(false), 4000);
+  // }, []);
 
   return (
     <>

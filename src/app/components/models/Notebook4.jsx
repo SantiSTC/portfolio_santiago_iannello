@@ -105,7 +105,7 @@ export function Notebook4({ video, ...props }) {
             rotation={[-0.27, 0, 0]}
             sca
             // scale={[1.21, 1.31, 1.21]}
-            className="w-[945px] h-[578px] bg-black flex items-start"
+            className="w-[945px] h-[578px] bg-black flex items-start rounded-sm"
           >
             <video
               src={video}
