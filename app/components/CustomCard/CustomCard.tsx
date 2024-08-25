@@ -18,8 +18,19 @@ interface CustomCardProps {
     text: string;
 }
 
-export function CustomCard({ text }: CustomCardProps) {
+export function CustomCard() {
     const [hovered, setHovered] = React.useState(false);
+
+    const copyToClipboard = (textToCopy: string) => {
+        navigator.clipboard.writeText(textToCopy)
+            .then(() => {
+                alert('Texto copiado al portapapeles!');
+            })
+            .catch((err) => {
+                console.error('Error al copiar el texto: ', err);
+            });
+    };
+
     return (
         <div
             onMouseEnter={() => setHovered(true)}
@@ -47,11 +58,11 @@ export function CustomCard({ text }: CustomCardProps) {
                     </p>
                     <p className="text-xl font-semibold italic text-gray-300 w-2/5 text-center">Si queres conversar sobre algo o simplemente decir hola, estaré encantado de responder</p>
                     <div className="w-full h-10 flex flex-row items-center justify-center gap-5 cursor-pointer">
-                        <Link href={"mailto:santiagoiannellot@gmail.com"} className="bg-white h-full rounded-xl flex px-4 items-center">
-                            <p className="text-black font-medium">santiagoiannellot@gmail.com</p>
+                        <Link href={"mailto:santiagoiannellot@gmail.com"} className="bg-white/20 h-full flex justify-center rounded-xl w-72 items-center font-medium text-white hover:bg-blue-500/50 transition-all duration-300">
+                            <p className="">santiagoiannellot@gmail.com</p> 
                         </Link>
-                        <div className="h-10 w-12 flex justify-center items-center bg-blue-500 rounded-xl hover:bg-blue-600">
-                            <Image src={"/contacto/copy.png"} alt={""} height={16} width={16} className="" />
+                        <div onClick={() => {copyToClipboard('santiagoiannellot@gmail.com')}} className="h-10 w-12 flex justify-center items-center bg-white/20 rounded-xl hover:bg-blue-500/50 transition-all duration-300">
+                            <Image src={"/contacto/copy2.png"} alt={""} height={16} width={16} className="" />
                         </div>
                     </div>
                     <p className="font-semibold">Ó</p>
