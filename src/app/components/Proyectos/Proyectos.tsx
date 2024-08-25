@@ -113,7 +113,7 @@ function Proyectos() {
       <Particles quantity={150} className="w-screen h-screen absolute left-0 z-0" />
       <h2
         ref={targetRef as MutableRefObject<HTMLDivElement | null>}
-        className={`text-6xl font-bold w-full text-center ${montserrat.className}`}
+        className={`text-5xl font-bold w-full text-center ${merriweather.className}`}
       >
         Nuestros Proyectos
       </h2>

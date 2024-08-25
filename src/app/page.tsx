@@ -1,12 +1,11 @@
 "use client";
 
-// import Inicio from "./components/Inicio/Inicio";
-// import Proyectos from "./components/Proyectos/Proyectos";
 import { useEffect, useState } from "react";
 import Spinner from "./components/Spinner/Spinner";
 import Image from "next/image";
 import Particles from "./components/magicui/particles";
 import dynamic from "next/dynamic";
+import Contact from "./components/Contact/Contact";
 
 const Inicio = dynamic(() => import("./components/Inicio/Inicio"));
 const Proyectos = dynamic(() => import("./components/Proyectos/Proyectos"));
@@ -40,8 +39,7 @@ export default function Home() {
           <main className="main min-h-screen w-screen flex flex-col items-center gap-20 bg-black">
             <Inicio />
             <Proyectos />
-            {/* <Como /> */}
-            {/* <Carrusel /> */}
+            <Contact />
           </main>
         </>
       )}
